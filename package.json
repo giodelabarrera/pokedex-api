@@ -5,15 +5,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node src/index.js",
+    "start:debug": "node --inspect-brk src/index.js",
     "format": "standard --fix",
     "check-format": "standard",
     "validate": "npm-run-all --parallel check-format"
   },
   "keywords": [],
   "dependencies": {
-    "body-parser": "^1.19.0",
     "cors": "^2.8.5",
-    "polka": "^0.5.2",
+    "express": "^4.17.1",
     "yup": "^0.29.1"
   },
   "devDependencies": {
