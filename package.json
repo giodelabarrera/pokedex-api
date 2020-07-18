@@ -1,0 +1,29 @@
+{
+  "name": "pokedex-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "format": "standard --fix",
+    "check-format": "standard",
+    "validate": "npm-run-all --parallel check-format"
+  },
+  "keywords": [],
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "polka": "^0.5.2",
+    "yup": "^0.29.1"
+  },
+  "devDependencies": {
+    "husky": "^4.2.5",
+    "npm-run-all": "^4.1.5",
+    "standard": "^14.3.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run validate"
+    }
+  }
+}
