@@ -37,7 +37,7 @@ app.get('/pokemon', async function (req, res) {
   const params = { query, types, sort, limit, offset }
   try {
     const listOfPokemon = await getListPokemon(params)
-    return res.status(200).json({ listOfPokemon })
+    return res.status(200).json(listOfPokemon)
   } catch (error) {
     const { message } = error
     return res.status(500).json({ message })
