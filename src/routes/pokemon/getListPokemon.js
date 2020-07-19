@@ -44,17 +44,13 @@ function sortListPokemon (sortType, listPokemon) {
 }
 
 function paginate (list, limit, offset) {
-  const value = list.slice(offset * limit, (offset + 1) * limit)
-  debugger  // eslint-disable-line
-  // return list.slice(2 * 12, 3 * 12)
-  return value
+  return list.slice(offset * limit, (offset + 1) * limit)
 }
 
 function getListPokemon ({ query, types = [], sort = SORT_TYPES.lowestNumber, limit = 12, offset = 0 }) {
   const combinedFilterPokemon = makeCombinedFilterPokemon({ query, types })
   const filteredListPokemon = pokedex.filter(combinedFilterPokemon)
   const sortedListPokemon = sortListPokemon(sort, filteredListPokemon)
-  debugger  // eslint-disable-line
   return paginate(sortedListPokemon, limit, offset)
 }
 
