@@ -3,6 +3,7 @@ const router = require('express').Router()
 
 const { SORT_TYPES } = require('./types.js')
 const { getListPokemon } = require('./getListPokemon.js')
+const { getSinglePokemon } = require('./getSinglePokemon.js')
 
 router.get('/', async function (req, res) {
   const { query, types, sort, limit, offset } = req.query
@@ -38,8 +39,27 @@ router.get('/', async function (req, res) {
 })
 
 router.get('/:idOrName', async function (req, res) {
-  // req.params -> {idOrName: "pikachu"}
-  res.status(200).json({ text: 'single' })
+  const { idOrName } = req.params
+
+  // validate
+  const schema = yup.object().shape({
+    idOrName: yup.string().required()
+  })
+  try {
+    await schema.validate({ idOrName }, { abortEarly: false })
+  } catch (error) {
+    const { errors, message } = error
+    return res.status(400).json({ errors, message })
+  }
+
+  try {
+    const pokemon = getSinglePokemon(idOrName)
+    if (!pokemon) res.status(404).json(null)
+    return res.status(200).json(pokemon)
+  } catch (error) {
+    const { message } = error
+    return res.status(500).json({ message })
+  }
 })
 
 module.exports = router
