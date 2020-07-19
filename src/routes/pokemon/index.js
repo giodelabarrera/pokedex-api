@@ -16,13 +16,18 @@ router.get('/', async function (req, res) {
     offset: yup.number().min(0)
   })
   try {
-    await schema.validate({ query, types, sort, limit, offset }, { abortEarly: false })
+    await schema.validate(
+      { query, types, sort, limit, offset },
+      { abortEarly: false }
+    )
   } catch (error) {
     const { errors, message } = error
     return res.status(400).json({ errors, message })
   }
 
-  const params = { query, types, sort, limit, offset }
+  const params = { query, types, sort }
+  if (typeof limit !== 'undefined') params.limit = Number(limit)
+  if (typeof offset !== 'undefined') params.offset = Number(offset)
   try {
     const pokemonList = getListPokemon(params)
     return res.status(200).json(pokemonList)
