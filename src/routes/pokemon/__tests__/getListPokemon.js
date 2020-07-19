@@ -14,13 +14,13 @@ test('should find by name as query', () => {
 })
 
 test('should find by single type', () => {
-  const params = { types: ['Dragon'] }
+  const params = { types: ['Dragon'], limit: 809 }
   const pokemonList = getListPokemon(params)
   expect(pokemonList).toHaveLength(45)
 })
 
 test('should find more than one type', () => {
-  const params = { types: ['Fire', 'Flying'] }
+  const params = { types: ['Fire', 'Flying'], limit: 809 }
   const pokemonList = getListPokemon(params)
   expect(pokemonList).toHaveLength(6)
 })
@@ -51,4 +51,11 @@ test('should order by highest number', () => {
   const pokemonList = getListPokemon(params)
   const firstPokemon = pokemonList[0]
   expect(firstPokemon.name.english).toBe('Melmetal')
+})
+
+test('should paginate', () => {
+  const params = { limit: 2, offset: 1 }
+  const pokemonList = getListPokemon(params)
+  const firstPokemon = pokemonList[0]
+  expect(firstPokemon.name.english).toBe('Venusaur')
 })
