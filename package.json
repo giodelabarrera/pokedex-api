@@ -8,9 +8,10 @@
     "start": "node src/index.js",
     "start:debug": "node --inspect-brk src/index.js",
     "test": "jest --watch",
+    "test:coverage": "jest",
     "format": "standard --fix",
     "check-format": "standard",
-    "validate": "npm-run-all --parallel check-format"
+    "validate": "npm-run-all --parallel check-format test:coverage"
   },
   "keywords": [],
   "dependencies": {
