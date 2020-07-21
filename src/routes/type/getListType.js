@@ -1,7 +1,7 @@
 const typesData = require('./data/types.json')
 
-function getTypesPokemon () {
+function getListType () {
   return typesData
 }
 
-module.exports = { getTypesPokemon }
+module.exports = { getListType }
