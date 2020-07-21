@@ -6,7 +6,7 @@ const serverPort = process.env.PORT || 3030
 
 const router = express.Router()
 router.use('/pokemon', require('./pokemon'))
-router.use('/types', require('./type'))
+router.use('/type', require('./type'))
 
 app.use(cors())
 app.use(router)
