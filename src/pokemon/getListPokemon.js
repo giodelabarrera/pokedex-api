@@ -64,9 +64,6 @@ function getListPokemon ({
   const combinedFilterPokemon = makeCombinedFilterPokemon({ query, types })
   const filteredListPokemon = pokedex.filter(combinedFilterPokemon)
   const sortedListPokemon = sortListPokemon(sort, filteredListPokemon)
-  // eslint-disable-next-line
-  debugger;
-
   return {
     total: sortedListPokemon.length,
     results: paginate(sortedListPokemon, limit, offset)
