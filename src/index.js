@@ -12,10 +12,6 @@ router.use('/type', require('./type'))
 
 app.use(cors())
 app.use(router)
-// app.listen(serverPort, function (err) {
-//   if (err) throw err
-//   console.log(`> Running on ${serverPort}.`)
-// })
 
 https.createServer({
   key: fs.readFileSync('server.key'),
