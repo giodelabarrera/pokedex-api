@@ -9,8 +9,8 @@ const makeFilterByQuery = (query) => (pokemon) => {
   } = pokemon
   const id = originalId.toString()
   const name = originalName.toLowerCase()
-  const loweredQuery = query.toLowerCase().trim()
-  return loweredQuery === id || name.includes(query)
+  const cleanedQuery = query.toLowerCase().trim()
+  return cleanedQuery === id || name.includes(cleanedQuery)
 }
 
 const makeFilterByTypes = (types) => (pokemon) => {
