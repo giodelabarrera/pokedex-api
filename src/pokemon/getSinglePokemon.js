@@ -5,7 +5,7 @@ function getSinglePokemon (idOrName) {
     const { id: originalId, name: { english: originalName } } = pokemon
     const id = originalId.toString()
     const name = originalName.toLowerCase()
-    return idOrName === id || name.includes(idOrName)
+    return idOrName === id || name === idOrName
   })
 }
 
