@@ -1,4 +1,4 @@
-# Pokedex API
+<h1> <img src="https://cloud.githubusercontent.com/assets/1094151/17297180/9f2950ca-57d2-11e6-9bd3-d3f15ae7aeb7.png" width="24px" style="vertical-align: middle;"/> Pokédex API </h1>
 
 Pokédex REST API serving the characters of pokemon.
 
