@@ -29,11 +29,8 @@ PORT=3034 npm start
 
 ## Endpoints
 
-### Pokemon list
+### `GET /pokemon`
 
-`GET /pokemon`
-
-#### Paramaters
 
 | Name     | Type       | Description                     | Default        |
 | -------- | ---------- | ------------------------------- | -------------- |
@@ -46,14 +43,6 @@ PORT=3034 npm start
 **Example**
 
 `/pokemon?query=char&types[]=Fire&sort=lowest_number&limit=12&offset=0`
-
-#### Response
-
-**Code**
-
-`200`
-
-**Body raw**
 
 ```json
 {
@@ -81,21 +70,11 @@ PORT=3034 npm start
 }
 ```
 
-### Pokemon single
-
-`GET /pokemon/{id or name}`
+### `GET /pokemon/{id or name}`
 
 **Example**
 
 `/pokemon/pikachu`
-
-#### Response
-
-**Code**
-
-`200`
-
-**Body raw**
 
 ```json
 {
