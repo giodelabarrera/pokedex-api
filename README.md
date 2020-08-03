@@ -68,7 +68,6 @@ Now you can make requests to http://localhost:3030
         "Speed": 65
       }
     }
-    // ...
   ]
 }
 ```
