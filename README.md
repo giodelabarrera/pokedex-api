@@ -10,7 +10,7 @@ Pokédex REST API serving the characters of pokemon.
 npm i
 ```
 
-### Server
+### Run server
 
 ```sh
 npm start
