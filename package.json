@@ -35,5 +35,6 @@
       "test",
       "expect"
     ]
-  }
+  },
+  "license": "MIT"
 }
