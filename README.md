@@ -74,7 +74,7 @@ PORT=3034 npm start
 
 **Example**
 
-`/pokemon/pikachu`
+`/pokemon/pikachu` or `/pokemon/25`
 
 ```json
 {
