@@ -18,6 +18,15 @@ npm start
 
 Now you can make requests to http://localhost:3030
 
+#### Alternative port
+
+You can start server on other ports with the environment variable:
+
+```sh
+PORT=3034 npm start
+```
+
+
 ## Endpoints
 
 ### Pokemon list
